@@ -19,9 +19,7 @@ function Calculator() {
     if (number == "." && input.includes(".")) {
       return;
     }
-    // else if(number =="%"){
-    //    setInput(input )
-    // }
+
     setInput((prevValue) => prevValue + number);
   };
   //for onedigit remove
@@ -35,13 +33,6 @@ function Calculator() {
     console.log(result);
     setInput(result);
     //console.log(number);
-
-    // if (number == "%") {
-    //   let number = input;
-    //   let parcent = input.length + 1;
-    //   let result= input
-    //   setInput();
-    // }
   };
   // for root
   const handleRoot = () => {
@@ -51,6 +42,7 @@ function Calculator() {
   const handleParcentage = (number) => {
     const inputFloat = parseFloat(input);
     const result = eval(input);
+
     if (number == "%") {
       setInput(result / 100);
     }
