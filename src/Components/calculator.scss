@@ -1,0 +1,66 @@
+h1{
+    
+    border: 2px solid greenyellow;
+    color: brown;
+    background-color: whitesmoke;
+    display: inline-block;
+    margin: 10px 40%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.calculator{
+    margin: 5% 33%;
+
+    .screen{
+        margin: 15px 0;
+        input{
+            width: 98%;
+            height: 40px;
+            text-align: right;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+    }
+
+    .buttonSet{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap:5px;
+
+        .button{
+            padding: 7px;
+            border: 1px solid black;
+            border-radius: 3px;
+            text-align: center;
+            font-weight: 800;
+
+
+            &:hover{
+                background-color: greenyellow;
+                color: black;
+                
+            }
+        }
+
+        
+
+        .button_result{
+            padding: 7px;
+            border: 1px solid black;
+            border-radius: 3px;
+            text-align: center;
+            font-weight: 800;
+            grid-column: 1 / span 4;
+            grid-row: 6;
+        
+         &:hover{
+    background-color: greenyellow;
+    color: black;
+    
+        }
+        }
+        
+
+    }
+}
