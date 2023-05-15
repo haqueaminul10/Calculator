@@ -19,7 +19,9 @@ function Calculator() {
     if (number == "." && input.includes(".")) {
       return;
     }
-
+    // else if(number =="%"){
+    //    setInput(input )
+    // }
     setInput((prevValue) => prevValue + number);
   };
   //for onedigit remove
@@ -27,20 +29,32 @@ function Calculator() {
     setInput(input.substring(0, input.length - 1));
   };
   // for submitted result
-  const handleSubmit = () => {
+  const handleSubmit = (number) => {
     const inputFloat = parseFloat(input);
-    //console.log(inputFloat);
-    setInput(eval(input));
+    const result = eval(input);
+    console.log(result);
+    setInput(result);
+    //console.log(number);
+
+    // if (number == "%") {
+    //   let number = input;
+    //   let parcent = input.length + 1;
+    //   let result= input
+    //   setInput();
+    // }
   };
   // for root
   const handleRoot = () => {
     setInput(Math.sqrt(input));
   };
-  //for parcentage
-  const handleParcentage = () => {
-    setInput();
+  // for parcentage
+  const handleParcentage = (number) => {
+    const inputFloat = parseFloat(input);
+    const result = eval(input);
+    if (number == "%") {
+      setInput(result / 100);
+    }
   };
-
   return (
     <>
       <h1>Calculator App</h1>
@@ -54,7 +68,7 @@ function Calculator() {
           <div onClick={() => handleClear("")} className="button">
             AC
           </div>
-          <div className="button" onClick={handleParcentage}>
+          <div className="button" onClick={() => handleParcentage("%")}>
             %
           </div>
           <div className="button" onClick={handleRoot}>
